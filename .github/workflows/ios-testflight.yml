@@ -183,6 +183,8 @@ jobs:
           perl -pi -e "s/DEVELOPMENT_TEAM: \w+/DEVELOPMENT_TEAM: $TEAM_ID/" project.yml
           perl -pi -e 's/ASSETCATALOG_COMPILER_APPICON_NAME: ""/ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon/' project.yml
           perl -pi -e 's/^(\s+)CFBundleDisplayName: TachiyomiAZ$/$1CFBundleDisplayName: TachiTest\n$1CFBundleIconName: AppIcon\n$1ITSAppUsesNonExemptEncryption: false/' project.yml
+          # iPad exige las 4 orientaciones (error 90474); el iPhone mantiene las suyas.
+          perl -pi -e 's/^(\s+)UIUserInterfaceStyle: Automatic$/$1"UISupportedInterfaceOrientations~ipad":\n$1  - UIInterfaceOrientationPortrait\n$1  - UIInterfaceOrientationPortraitUpsideDown\n$1  - UIInterfaceOrientationLandscapeLeft\n$1  - UIInterfaceOrientationLandscapeRight\n$1UIUserInterfaceStyle: Automatic/' project.yml
           grep -nE "PRODUCT_BUNDLE_IDENTIFIER|DEVELOPMENT_TEAM|APPICON|CFBundleIconName|CFBundleDisplayName|NonExempt" project.yml
 
       - name: Generate the Xcode project
