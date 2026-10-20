@@ -11,13 +11,6 @@ name: AltStore Source
 
 on:
   workflow_dispatch:
-    inputs:
-      release_tag:
-        description: GitHub release tag containing the IPA
-        required: true
-        default: ios-nightly
-  release:
-    types: [published]
 
 permissions:
   contents: write

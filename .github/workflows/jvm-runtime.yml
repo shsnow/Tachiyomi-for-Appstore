@@ -12,23 +12,7 @@ name: JVM Runtime
 # and stage-jvm-resources.sh warns when a staged jar is older than the source it came from.
 
 on:
-  push:
-    branches:
-      - 'master'
-      - 'rxjava-migration'
-    paths:
-      - 'Runtime/**'
-      - 'iosApp/Scripts/build-mobile-shims.sh'
-      - 'iosApp/Scripts/build-extension-host.sh'
-      - 'iosApp/Scripts/verify-jvm-runtime.sh'
-      - '.github/workflows/jvm-runtime.yml'
-  pull_request:
-    paths:
-      - 'Runtime/**'
-      - 'iosApp/Scripts/build-mobile-shims.sh'
-      - 'iosApp/Scripts/build-extension-host.sh'
-      - 'iosApp/Scripts/verify-jvm-runtime.sh'
-      - '.github/workflows/jvm-runtime.yml'
+  workflow_dispatch:
 
 jobs:
   verify:

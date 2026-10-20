@@ -1,21 +1,7 @@
 name: Android Master CI
 
 on:
-  push:
-    branches:
-      - 'master'
-    paths:
-      - 'app/**'
-      - 'core-model/**'
-      - 'core-database/**'
-      - 'core-domain/**'
-      - 'buildSrc/**'
-      - 'gradle/**'
-      - 'gradlew'
-      - 'build.gradle.kts'
-      - 'settings.gradle.kts'
-      - 'gradle.properties'
-      - '.github/workflows/build.yml'
+  workflow_dispatch:
 
 jobs:
   apk:

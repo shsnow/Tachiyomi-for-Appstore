@@ -8,38 +8,6 @@ name: iOS CI
 # artifact. What is left for macOS is Kotlin/Native and Xcode, both of which are cached.
 
 on:
-  push:
-    branches:
-      - 'master'
-    paths:
-      - 'iosApp/**'
-      - 'Runtime/**'
-      - 'shared-ios/**'
-      - 'core-model/**'
-      - 'core-database/**'
-      - 'core-domain/**'
-      - 'buildSrc/**'
-      - 'gradle/**'
-      - 'gradlew'
-      - 'build.gradle.kts'
-      - 'settings.gradle.kts'
-      - 'gradle.properties'
-      - '.github/workflows/ios.yml'
-  pull_request:
-    paths:
-      - 'iosApp/**'
-      - 'Runtime/**'
-      - 'shared-ios/**'
-      - 'core-model/**'
-      - 'core-database/**'
-      - 'core-domain/**'
-      - 'buildSrc/**'
-      - 'gradle/**'
-      - 'gradlew'
-      - 'build.gradle.kts'
-      - 'settings.gradle.kts'
-      - 'gradle.properties'
-      - '.github/workflows/ios.yml'
   workflow_dispatch:
 
 concurrency:

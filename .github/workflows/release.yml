@@ -4,11 +4,7 @@ name: Publish Release
 # The release ships two APKs (Android 5-7 + Android 8+); the in-app updater picks
 # the one matching each install via the "android5"/"android8" marker in the file name.
 on:
-  push:
-    branches:
-      - 'master'
-    paths:
-      - 'app/build.gradle'
+  workflow_dispatch:
 
 jobs:
   check:
